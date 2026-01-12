@@ -11,8 +11,10 @@ class Email(Base):
     sender = Column(String, nullable=False)
     subject = Column(String)
     body = Column(Text)
-    status = Column(String , default="parsed")
+    status = Column(String , default="new")
     created_at = Column(DateTime, default=datetime.utcnow)
 
     intent = Column(String , nullable=True)
     confidence = Column(Float, nullable=True)
+    draft_response = Column(Text , nullable = True)
+    
